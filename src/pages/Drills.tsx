@@ -50,7 +50,7 @@ export function Drills() {
       result = result.filter((d) => d.difficulty === filters.difficulty);
     }
     if (filters.maxMinutes !== 'all') {
-      result = result.filter((d) => d.estimatedMinutes <= filters.maxMinutes);
+      result = result.filter((d) => d.estimatedMinutes <= Number(filters.maxMinutes));
     }
     if (filters.location !== 'all') {
       result = result.filter((d) => d.location === filters.location);

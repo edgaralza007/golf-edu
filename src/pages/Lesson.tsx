@@ -51,10 +51,6 @@ export function Lesson() {
   const isCompleted = progress?.lessonsCompleted.includes(lesson.id) ?? false;
   const { prev, next } = getAdjacentLessons(mod.id, lesson.id);
 
-  const handleMarkComplete = () => {
-    updateModuleProgress(mod.id, lesson.id, mod.lessons.length);
-  };
-
   const handleCompleteAndNext = () => {
     if (!isCompleted) {
       updateModuleProgress(mod.id, lesson.id, mod.lessons.length);
