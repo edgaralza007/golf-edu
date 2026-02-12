@@ -35,13 +35,13 @@ export function Home() {
           <div className="mt-6 flex flex-wrap gap-3">
             {!user.onboardingComplete ? (
               <Link to="/onboarding">
-                <Button size="lg" className="bg-white text-green-800 hover:bg-green-50">
+                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
                   Get Started
                 </Button>
               </Link>
             ) : (
               <Link to="/learning-path">
-                <Button size="lg" className="bg-white text-green-800 hover:bg-green-50">
+                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
                   Continue Learning
                 </Button>
               </Link>
