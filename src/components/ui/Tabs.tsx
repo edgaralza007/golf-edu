@@ -16,7 +16,7 @@ interface TabsProps {
 export function Tabs({ tabs, activeTab, onChange, children, className = '' }: TabsProps) {
   return (
     <div className={className}>
-      <div className="flex border-b border-gray-200 overflow-x-auto" role="tablist">
+      <div className="flex border-b border-gray-200 dark:border-gray-700 overflow-x-auto" role="tablist">
         {tabs.map((tab) => (
           <button
             key={tab.id}
@@ -25,8 +25,8 @@ export function Tabs({ tabs, activeTab, onChange, children, className = '' }: Ta
             onClick={() => onChange(tab.id)}
             className={`whitespace-nowrap px-4 py-2.5 text-sm font-medium border-b-2 transition-colors ${
               activeTab === tab.id
-                ? 'border-green-700 text-green-700'
-                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                ? 'border-green-700 dark:border-green-500 text-green-700 dark:text-green-400'
+                : 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600'
             }`}
           >
             {tab.label}

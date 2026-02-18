@@ -26,8 +26,8 @@ export function LearningModule() {
   if (!mod) {
     return (
       <div className="max-w-2xl mx-auto text-center py-16">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">Module Not Found</h1>
-        <p className="text-gray-600 mb-6">This module does not exist.</p>
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">Module Not Found</h1>
+        <p className="text-gray-600 dark:text-gray-400 mb-6">This module does not exist.</p>
         <Link to="/learning-path">
           <Button>Back to Learning Path</Button>
         </Link>
@@ -53,11 +53,11 @@ export function LearningModule() {
     <div className="max-w-2xl mx-auto">
       {/* Breadcrumb */}
       <nav className="mb-6 text-sm">
-        <Link to="/learning-path" className="text-green-700 hover:text-green-800">
+        <Link to="/learning-path" className="text-green-700 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300">
           Learning Path
         </Link>
-        <span className="mx-2 text-gray-400">/</span>
-        <span className="text-gray-600">{mod.title}</span>
+        <span className="mx-2 text-gray-400 dark:text-gray-500">/</span>
+        <span className="text-gray-600 dark:text-gray-400">{mod.title}</span>
       </nav>
 
       {/* Module Header */}
@@ -65,13 +65,13 @@ export function LearningModule() {
         <div className="flex items-center gap-3 mb-2">
           <span className="text-3xl">{mod.icon}</span>
           <div>
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100">
               {mod.title}
             </h1>
           </div>
         </div>
-        <p className="text-gray-600 mt-2">{mod.description}</p>
-        <div className="flex items-center gap-4 mt-3 text-sm text-gray-500">
+        <p className="text-gray-600 dark:text-gray-400 mt-2">{mod.description}</p>
+        <div className="flex items-center gap-4 mt-3 text-sm text-gray-500 dark:text-gray-400">
           <span>{totalLessons} lessons</span>
           <span>{estMinutes} min total</span>
           {isComplete && <Badge variant="green">Complete</Badge>}
@@ -102,7 +102,7 @@ export function LearningModule() {
                     className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 border-2 transition-colors ${
                       done
                         ? 'bg-green-600 border-green-600 text-white'
-                        : 'border-gray-300 text-transparent group-hover:border-green-400'
+                        : 'border-gray-300 dark:border-gray-600 text-transparent group-hover:border-green-400 dark:hover:border-green-600'
                     }`}
                   >
                     {done ? (
@@ -120,7 +120,7 @@ export function LearningModule() {
                         />
                       </svg>
                     ) : (
-                      <span className="text-xs font-medium text-gray-400">
+                      <span className="text-xs font-medium text-gray-400 dark:text-gray-500">
                         {idx + 1}
                       </span>
                     )}
@@ -131,20 +131,20 @@ export function LearningModule() {
                     <h3
                       className={`font-medium transition-colors ${
                         done
-                          ? 'text-gray-500'
-                          : 'text-gray-900 group-hover:text-green-700'
+                          ? 'text-gray-500 dark:text-gray-400'
+                          : 'text-gray-900 dark:text-gray-100 group-hover:text-green-700 dark:group-hover:text-green-400'
                       }`}
                     >
                       {lesson.title}
                     </h3>
-                    <span className="text-xs text-gray-400">
+                    <span className="text-xs text-gray-400 dark:text-gray-500">
                       {lesson.estimatedMinutes} min
                     </span>
                   </div>
 
                   {/* Arrow */}
                   <svg
-                    className="w-5 h-5 text-gray-300 group-hover:text-green-600 transition-colors shrink-0"
+                    className="w-5 h-5 text-gray-300 dark:text-gray-600 group-hover:text-green-600 transition-colors shrink-0"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -165,12 +165,12 @@ export function LearningModule() {
 
       {/* Next Module prompt */}
       {isComplete && nextModule && (
-        <Card className="mt-8 bg-green-50 border-green-200">
+        <Card className="mt-8 bg-green-50 dark:bg-green-900/30 border-green-200 dark:border-green-800">
           <div className="text-center">
-            <p className="text-green-800 font-medium mb-2">
+            <p className="text-green-800 dark:text-green-300 font-medium mb-2">
               Great job completing this module!
             </p>
-            <p className="text-green-700 text-sm mb-4">
+            <p className="text-green-700 dark:text-green-400 text-sm mb-4">
               You have unlocked the next module: {nextModule.icon}{' '}
               {nextModule.title}
             </p>
@@ -182,12 +182,12 @@ export function LearningModule() {
       )}
 
       {isComplete && !nextModule && (
-        <Card className="mt-8 bg-green-50 border-green-200">
+        <Card className="mt-8 bg-green-50 dark:bg-green-900/30 border-green-200 dark:border-green-800">
           <div className="text-center">
-            <p className="text-green-800 font-medium mb-2">
+            <p className="text-green-800 dark:text-green-300 font-medium mb-2">
               Congratulations! You have completed the entire learning path!
             </p>
-            <p className="text-green-700 text-sm mb-4">
+            <p className="text-green-700 dark:text-green-400 text-sm mb-4">
               You now have a solid foundation in golf fundamentals. Time to hit
               the course!
             </p>

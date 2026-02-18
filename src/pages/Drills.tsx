@@ -70,8 +70,8 @@ export function Drills() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900">Practice Drills</h1>
-          <p className="text-gray-500 mt-1">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100">Practice Drills</h1>
+          <p className="text-gray-500 dark:text-gray-400 mt-1">
             {filtered.length} drill{filtered.length !== 1 ? 's' : ''} to improve your game
           </p>
         </div>
@@ -92,7 +92,7 @@ export function Drills() {
           </button>
           <button
             onClick={() => setMobileFiltersOpen(true)}
-            className="md:hidden inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-200 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+            className="md:hidden inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
@@ -121,7 +121,7 @@ export function Drills() {
           {filtered.length === 0 ? (
             <div className="text-center py-16">
               <svg
-                className="w-16 h-16 mx-auto text-gray-300 mb-4"
+                className="w-16 h-16 mx-auto text-gray-300 dark:text-gray-600 mb-4"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -133,8 +133,8 @@ export function Drills() {
                   d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              <h3 className="text-lg font-medium text-gray-900 mb-1">No drills found</h3>
-              <p className="text-gray-500 text-sm">
+              <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100 mb-1">No drills found</h3>
+              <p className="text-gray-500 dark:text-gray-400 text-sm">
                 Try adjusting your filters or search query.
               </p>
             </div>

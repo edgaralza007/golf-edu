@@ -35,17 +35,17 @@ export function SwingPhaseViewer({
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               i === currentPhase
                 ? 'bg-green-600 scale-125'
-                : 'bg-gray-300 hover:bg-gray-400'
+                : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
             }`}
           />
         ))}
       </div>
 
       {/* Phase name */}
-      <p className="text-center text-sm text-gray-500 font-medium">
+      <p className="text-center text-sm text-gray-500 dark:text-gray-400 font-medium">
         Phase {currentPhase + 1} of {totalPhases}
       </p>
-      <h3 className="text-center text-xl font-bold text-gray-900 mt-1">{phaseName}</h3>
+      <h3 className="text-center text-xl font-bold text-gray-900 dark:text-gray-100 mt-1">{phaseName}</h3>
 
       {/* Previous / Next / Auto-play controls */}
       <div className="flex items-center justify-between mt-5 gap-3">
@@ -64,7 +64,7 @@ export function SwingPhaseViewer({
           className={`inline-flex items-center justify-center w-12 h-12 rounded-full transition-colors ${
             autoPlay
               ? 'bg-green-700 text-white hover:bg-green-800'
-              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-600'
           }`}
         >
           {autoPlay ? (

@@ -35,8 +35,8 @@ export function ClubTypeCard({ club }: ClubTypeCardProps) {
             style={{ backgroundColor: color }}
           />
           <div className="min-w-0">
-            <h3 className="font-semibold text-gray-900 text-base">{club.name}</h3>
-            <p className="text-xs text-gray-500">{categoryLabels[club.category]}</p>
+            <h3 className="font-semibold text-gray-900 dark:text-gray-100 text-base">{club.name}</h3>
+            <p className="text-xs text-gray-500 dark:text-gray-400">{categoryLabels[club.category]}</p>
           </div>
         </div>
         <div className="flex items-center gap-2 shrink-0">
@@ -44,7 +44,7 @@ export function ClubTypeCard({ club }: ClubTypeCardProps) {
             {difficultyLabels[club.difficulty]}
           </Badge>
           <svg
-            className={`w-4 h-4 text-gray-400 transition-transform ${expanded ? 'rotate-180' : ''}`}
+            className={`w-4 h-4 text-gray-400 dark:text-gray-500 transition-transform ${expanded ? 'rotate-180' : ''}`}
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -55,31 +55,31 @@ export function ClubTypeCard({ club }: ClubTypeCardProps) {
         </div>
       </div>
 
-      <p className="mt-2 text-sm text-gray-600">{club.description}</p>
+      <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{club.description}</p>
 
       {expanded && (
-        <div className="mt-4 space-y-3 border-t border-gray-100 pt-4">
+        <div className="mt-4 space-y-3 border-t border-gray-100 dark:border-gray-700 pt-4">
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">Typical Use</p>
-              <p className="text-sm text-gray-800 mt-0.5">{club.usage}</p>
+              <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">Typical Use</p>
+              <p className="text-sm text-gray-800 dark:text-gray-200 mt-0.5">{club.usage}</p>
             </div>
             <div>
-              <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">Beginner Distance</p>
-              <p className="text-sm text-gray-800 mt-0.5">{club.beginnerDistance}</p>
+              <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">Beginner Distance</p>
+              <p className="text-sm text-gray-800 dark:text-gray-200 mt-0.5">{club.beginnerDistance}</p>
             </div>
             <div>
-              <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">Loft</p>
-              <p className="text-sm text-gray-800 mt-0.5">{club.loftDegrees}&deg;</p>
+              <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">Loft</p>
+              <p className="text-sm text-gray-800 dark:text-gray-200 mt-0.5">{club.loftDegrees}&deg;</p>
             </div>
             <div>
-              <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">Difficulty</p>
-              <p className="text-sm text-gray-800 mt-0.5">{difficultyLabels[club.difficulty]}</p>
+              <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">Difficulty</p>
+              <p className="text-sm text-gray-800 dark:text-gray-200 mt-0.5">{difficultyLabels[club.difficulty]}</p>
             </div>
           </div>
-          <div className="bg-green-50 border border-green-100 rounded-lg p-3">
-            <p className="text-xs font-medium text-green-800 uppercase tracking-wide mb-1">Beginner Tip</p>
-            <p className="text-sm text-green-900">{club.tip}</p>
+          <div className="bg-green-50 dark:bg-green-900/30 border border-green-100 dark:border-green-800 rounded-lg p-3">
+            <p className="text-xs font-medium text-green-800 dark:text-green-300 uppercase tracking-wide mb-1">Beginner Tip</p>
+            <p className="text-sm text-green-900 dark:text-green-200">{club.tip}</p>
           </div>
         </div>
       )}

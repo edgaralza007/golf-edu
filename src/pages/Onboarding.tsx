@@ -133,7 +133,7 @@ export function Onboarding() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white flex flex-col">
+    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white dark:from-gray-900 dark:to-gray-800 flex flex-col">
       {/* Progress dots */}
       <div className="flex justify-center gap-2 pt-8 pb-4">
         {Array.from({ length: TOTAL_STEPS }).map((_, i) => (
@@ -144,7 +144,7 @@ export function Onboarding() {
                 ? 'w-8 bg-green-600'
                 : i < currentStep
                   ? 'w-2.5 bg-green-400'
-                  : 'w-2.5 bg-gray-300'
+                  : 'w-2.5 bg-gray-300 dark:bg-gray-600'
             }`}
           />
         ))}

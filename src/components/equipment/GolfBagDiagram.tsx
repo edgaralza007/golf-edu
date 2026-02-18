@@ -73,8 +73,8 @@ export function GolfBagDiagram() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-xl font-bold text-gray-900 mb-2">What Goes in Your Bag</h2>
-        <p className="text-sm text-gray-600">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">What Goes in Your Bag</h2>
+        <p className="text-sm text-gray-600 dark:text-gray-400">
           A golf bag holds up to 14 clubs. Tap a section to learn what goes where.
         </p>
       </div>
@@ -166,51 +166,51 @@ export function GolfBagDiagram() {
         <div className="flex-1 min-w-0 w-full">
           {active ? (
             <Card className="border-l-4" style={{ borderLeftColor: categoryColors[active.id] }}>
-              <h3 className="font-bold text-gray-900 text-lg mb-1">
+              <h3 className="font-bold text-gray-900 dark:text-gray-100 text-lg mb-1">
                 {categoryLabels[active.id]}
               </h3>
-              <p className="text-sm text-gray-500 mb-3">
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
                 {active.clubs.length} club{active.clubs.length !== 1 ? 's' : ''} in this section
               </p>
               <div className="flex flex-wrap gap-2">
                 {active.clubs.map((club) => (
                   <span
                     key={club}
-                    className="inline-block px-3 py-1.5 rounded-md text-sm font-medium bg-gray-100 text-gray-800"
+                    className="inline-block px-3 py-1.5 rounded-md text-sm font-medium bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200"
                   >
                     {club}
                   </span>
                 ))}
               </div>
               {active.id === 'wood' && (
-                <p className="text-sm text-gray-600 mt-3">
+                <p className="text-sm text-gray-600 dark:text-gray-400 mt-3">
                   Woods go in the back of the bag. They are your longest clubs and have the biggest heads.
                 </p>
               )}
               {active.id === 'iron' && (
-                <p className="text-sm text-gray-600 mt-3">
+                <p className="text-sm text-gray-600 dark:text-gray-400 mt-3">
                   Irons occupy the middle section. They are your most versatile clubs for approach shots.
                 </p>
               )}
               {active.id === 'wedge' && (
-                <p className="text-sm text-gray-600 mt-3">
+                <p className="text-sm text-gray-600 dark:text-gray-400 mt-3">
                   Wedges go in the front with the putter. They handle short game shots around the green.
                 </p>
               )}
               {active.id === 'hybrid' && (
-                <p className="text-sm text-gray-600 mt-3">
+                <p className="text-sm text-gray-600 dark:text-gray-400 mt-3">
                   Hybrids sit between woods and irons. They replace hard-to-hit long irons.
                 </p>
               )}
               {active.id === 'putter' && (
-                <p className="text-sm text-gray-600 mt-3">
+                <p className="text-sm text-gray-600 dark:text-gray-400 mt-3">
                   The putter has its own slot, typically in the front. You will use it more than any other club.
                 </p>
               )}
             </Card>
           ) : (
-            <Card className="bg-gray-50 text-center">
-              <p className="text-sm text-gray-500 py-4">
+            <Card className="bg-gray-50 dark:bg-gray-900 text-center">
+              <p className="text-sm text-gray-500 dark:text-gray-400 py-4">
                 Tap a section in the bag diagram to see what clubs go there.
               </p>
             </Card>
@@ -224,7 +224,7 @@ export function GolfBagDiagram() {
                   className="w-3 h-3 rounded-full"
                   style={{ backgroundColor: categoryColors[section.id] }}
                 />
-                <span className="text-xs text-gray-600">{section.label}</span>
+                <span className="text-xs text-gray-600 dark:text-gray-400">{section.label}</span>
               </div>
             ))}
           </div>

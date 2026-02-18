@@ -6,9 +6,9 @@ interface DifficultyBadgeProps {
 }
 
 const colorClasses: Record<1 | 2 | 3, string> = {
-  1: 'bg-green-100 text-green-800',
-  2: 'bg-amber-100 text-amber-800',
-  3: 'bg-red-100 text-red-800',
+  1: 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300',
+  2: 'bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300',
+  3: 'bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300',
 };
 
 export function DifficultyBadge({ level, className = '' }: DifficultyBadgeProps) {

@@ -16,8 +16,8 @@ function CheckpointItem({ label, value, icon }: CheckpointItemProps) {
     <div className="flex items-start gap-3">
       <span className="text-xl mt-0.5 shrink-0">{icon}</span>
       <div className="min-w-0">
-        <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{label}</p>
-        <p className="text-sm text-gray-800 mt-0.5">{value}</p>
+        <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">{label}</p>
+        <p className="text-sm text-gray-800 dark:text-gray-200 mt-0.5">{value}</p>
       </div>
     </div>
   );
@@ -26,7 +26,7 @@ function CheckpointItem({ label, value, icon }: CheckpointItemProps) {
 export function KeyCheckpoints({ phase }: KeyCheckpointsProps) {
   return (
     <Card className="mt-4">
-      <h3 className="text-base font-semibold text-gray-900 mb-4">Key Checkpoints</h3>
+      <h3 className="text-base font-semibold text-gray-900 dark:text-gray-100 mb-4">Key Checkpoints</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <CheckpointItem icon="🤲" label="Grip" value={phase.gripNote} />
         <CheckpointItem icon="🧍" label="Body Position" value={phase.bodyPosition} />

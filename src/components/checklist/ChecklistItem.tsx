@@ -11,7 +11,7 @@ export function ChecklistItem({ item, checked, onToggle }: ChecklistItemProps) {
   const [tipOpen, setTipOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-100 last:border-b-0">
+    <div className="border-b border-gray-100 dark:border-gray-700 last:border-b-0">
       <div className="flex items-start gap-3 py-3 px-2">
         <button
           type="button"
@@ -21,7 +21,7 @@ export function ChecklistItem({ item, checked, onToggle }: ChecklistItemProps) {
           className={`mt-0.5 flex-shrink-0 w-6 h-6 rounded-md border-2 flex items-center justify-center transition-colors ${
             checked
               ? 'bg-green-600 border-green-600'
-              : 'border-gray-300 hover:border-green-400'
+              : 'border-gray-300 dark:border-gray-600 hover:border-green-400 dark:hover:border-green-600'
           }`}
         >
           {checked && (
@@ -39,13 +39,13 @@ export function ChecklistItem({ item, checked, onToggle }: ChecklistItemProps) {
           >
             <span
               className={`text-sm leading-snug transition-colors ${
-                checked ? 'text-gray-400 line-through' : 'text-gray-800'
+                checked ? 'text-gray-400 dark:text-gray-500 line-through' : 'text-gray-800 dark:text-gray-200'
               }`}
             >
               {item.label}
             </span>
             <svg
-              className={`w-4 h-4 flex-shrink-0 text-gray-400 group-hover:text-green-600 transition-transform ${
+              className={`w-4 h-4 flex-shrink-0 text-gray-400 dark:text-gray-500 group-hover:text-green-600 dark:group-hover:text-green-400 transition-transform ${
                 tipOpen ? 'rotate-180' : ''
               }`}
               fill="none"
@@ -57,8 +57,8 @@ export function ChecklistItem({ item, checked, onToggle }: ChecklistItemProps) {
           </button>
 
           {tipOpen && (
-            <div className="mt-2 p-3 bg-green-50 rounded-lg border border-green-100">
-              <p className="text-sm text-green-800 leading-relaxed">
+            <div className="mt-2 p-3 bg-green-50 dark:bg-green-900/30 rounded-lg border border-green-100 dark:border-green-800">
+              <p className="text-sm text-green-800 dark:text-green-300 leading-relaxed">
                 <span className="font-medium">Tip: </span>
                 {item.tip}
               </p>

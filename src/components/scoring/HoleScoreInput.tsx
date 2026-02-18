@@ -9,8 +9,8 @@ export function HoleScoreInput({ holeScore, onChange }: HoleScoreInputProps) {
   const isPar3 = holeScore.par === 3;
 
   return (
-    <div className="grid grid-cols-5 gap-2 items-center py-2 border-b border-gray-100 last:border-b-0">
-      <div className="text-center font-semibold text-gray-700 text-sm">
+    <div className="grid grid-cols-5 gap-2 items-center py-2 border-b border-gray-100 dark:border-gray-700 last:border-b-0">
+      <div className="text-center font-semibold text-gray-700 dark:text-gray-300 text-sm">
         {holeScore.hole}
       </div>
 
@@ -27,7 +27,7 @@ export function HoleScoreInput({ holeScore, onChange }: HoleScoreInputProps) {
               fairwayHit: Number(e.target.value) === 3 ? null : holeScore.fairwayHit,
             })
           }
-          className="w-full h-10 text-center rounded-lg border border-gray-300 text-sm font-medium focus:ring-2 focus:ring-green-500 focus:border-green-500"
+          className="w-full h-10 text-center rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm font-medium focus:ring-2 focus:ring-green-500 focus:border-green-500"
         />
       </div>
 
@@ -41,7 +41,7 @@ export function HoleScoreInput({ holeScore, onChange }: HoleScoreInputProps) {
             onChange({ ...holeScore, score: Number(e.target.value) || 0 })
           }
           placeholder="-"
-          className="w-full h-10 text-center rounded-lg border border-gray-300 text-sm font-medium focus:ring-2 focus:ring-green-500 focus:border-green-500"
+          className="w-full h-10 text-center rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm font-medium focus:ring-2 focus:ring-green-500 focus:border-green-500"
         />
       </div>
 
@@ -55,7 +55,7 @@ export function HoleScoreInput({ holeScore, onChange }: HoleScoreInputProps) {
             onChange({ ...holeScore, putts: Number(e.target.value) || 0 })
           }
           placeholder="-"
-          className="w-full h-10 text-center rounded-lg border border-gray-300 text-sm font-medium focus:ring-2 focus:ring-green-500 focus:border-green-500"
+          className="w-full h-10 text-center rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm font-medium focus:ring-2 focus:ring-green-500 focus:border-green-500"
         />
       </div>
 

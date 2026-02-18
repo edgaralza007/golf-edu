@@ -15,10 +15,10 @@ export function RulesEtiquette() {
 
   return (
     <div className="max-w-3xl mx-auto">
-      <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
+      <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-1">
         Rules &amp; Etiquette
       </h1>
-      <p className="text-gray-600 mb-6">
+      <p className="text-gray-600 dark:text-gray-400 mb-6">
         Learn the essential rules and on-course etiquette every golfer should know.
       </p>
 

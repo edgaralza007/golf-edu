@@ -99,8 +99,8 @@ export function Dashboard() {
   return (
     <div className="max-w-4xl mx-auto space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
-        <p className="text-sm text-gray-500 mt-1">Your golf progress at a glance</p>
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Dashboard</h1>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Your golf progress at a glance</p>
       </div>
 
       {/* Stat cards row */}
@@ -139,7 +139,7 @@ export function Dashboard() {
 
       {/* Recent rounds */}
       <Card>
-        <h2 className="text-sm font-semibold text-gray-700 mb-3">Recent Rounds</h2>
+        <h2 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Recent Rounds</h2>
         <RoundHistory
           rounds={rounds.slice(-10)}
           onView={(round) => setViewingRound(round)}
@@ -155,28 +155,28 @@ export function Dashboard() {
       >
         {viewingRound && (
           <div className="space-y-3">
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
               {new Date(viewingRound.date).toLocaleDateString()} &middot;{' '}
               {viewingRound.holes} holes &middot; Par {viewingRound.coursePar}
             </p>
             <div className="grid grid-cols-4 gap-2 text-center">
-              <div className="bg-gray-50 rounded-lg p-2">
-                <p className="text-xs text-gray-500">Score</p>
+              <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-2">
+                <p className="text-xs text-gray-500 dark:text-gray-400">Score</p>
                 <p className="text-lg font-bold">{viewingRound.totalScore}</p>
               </div>
-              <div className="bg-gray-50 rounded-lg p-2">
-                <p className="text-xs text-gray-500">vs Par</p>
+              <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-2">
+                <p className="text-xs text-gray-500 dark:text-gray-400">vs Par</p>
                 <p className="text-lg font-bold">
                   {viewingRound.totalScore - viewingRound.coursePar > 0 ? '+' : ''}
                   {viewingRound.totalScore - viewingRound.coursePar}
                 </p>
               </div>
-              <div className="bg-gray-50 rounded-lg p-2">
-                <p className="text-xs text-gray-500">Putts</p>
+              <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-2">
+                <p className="text-xs text-gray-500 dark:text-gray-400">Putts</p>
                 <p className="text-lg font-bold">{viewingRound.totalPutts}</p>
               </div>
-              <div className="bg-gray-50 rounded-lg p-2">
-                <p className="text-xs text-gray-500">FW</p>
+              <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-2">
+                <p className="text-xs text-gray-500 dark:text-gray-400">FW</p>
                 <p className="text-lg font-bold">
                   {viewingRound.fairwaysPossible > 0
                     ? Math.round((viewingRound.fairwaysHit / viewingRound.fairwaysPossible) * 100) + '%'
@@ -186,7 +186,7 @@ export function Dashboard() {
             </div>
 
             <div className="mt-3">
-              <div className="grid grid-cols-5 gap-1 text-xs font-semibold text-gray-500 uppercase px-1">
+              <div className="grid grid-cols-5 gap-1 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase px-1">
                 <div className="text-center">Hole</div>
                 <div className="text-center">Par</div>
                 <div className="text-center">Score</div>
@@ -200,16 +200,16 @@ export function Dashboard() {
                     <div
                       key={s.hole}
                       className={`grid grid-cols-5 gap-1 text-sm text-center py-1 rounded ${
-                        diff < 0 ? 'bg-green-50' : diff > 1 ? 'bg-red-50' : ''
+                        diff < 0 ? 'bg-green-50 dark:bg-green-900/30' : diff > 1 ? 'bg-red-50 dark:bg-red-900/30' : ''
                       }`}
                     >
-                      <div className="font-medium text-gray-600">{s.hole}</div>
-                      <div className="text-gray-500">{s.par}</div>
-                      <div className={`font-semibold ${diff < 0 ? 'text-green-700' : diff > 0 ? 'text-red-600' : 'text-gray-800'}`}>
+                      <div className="font-medium text-gray-600 dark:text-gray-400">{s.hole}</div>
+                      <div className="text-gray-500 dark:text-gray-400">{s.par}</div>
+                      <div className={`font-semibold ${diff < 0 ? 'text-green-700 dark:text-green-400' : diff > 0 ? 'text-red-600 dark:text-red-400' : 'text-gray-800 dark:text-gray-200'}`}>
                         {s.score || '-'}
                       </div>
-                      <div className="text-gray-600">{s.putts || '-'}</div>
-                      <div className="text-gray-600">
+                      <div className="text-gray-600 dark:text-gray-400">{s.putts || '-'}</div>
+                      <div className="text-gray-600 dark:text-gray-400">
                         {s.fairwayHit === null ? '-' : s.fairwayHit ? 'Y' : 'N'}
                       </div>
                     </div>
@@ -235,11 +235,11 @@ export function Dashboard() {
             </span>
           </div>
           {newBadgeNames.map((name) => (
-            <p key={name} className="text-lg font-bold text-green-800">
+            <p key={name} className="text-lg font-bold text-green-800 dark:text-green-300">
               {name}
             </p>
           ))}
-          <p className="text-sm text-gray-500">Congratulations on your achievement!</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">Congratulations on your achievement!</p>
           <Button onClick={() => setShowCelebration(false)}>Continue</Button>
         </div>
         <style>{`

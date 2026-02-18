@@ -23,11 +23,11 @@ export function OnboardingStep({ title, subtitle, children, isActive, direction 
     <div
       className={`absolute inset-0 flex flex-col items-center justify-center px-4 transition-all duration-500 ease-in-out ${animationClass}`}
     >
-      <h2 className="text-2xl md:text-3xl font-bold text-green-900 text-center mb-2">
+      <h2 className="text-2xl md:text-3xl font-bold text-green-900 dark:text-green-200 text-center mb-2">
         {title}
       </h2>
       {subtitle && (
-        <p className="text-green-700 text-center mb-8 text-base md:text-lg max-w-md">
+        <p className="text-green-700 dark:text-green-400 text-center mb-8 text-base md:text-lg max-w-md">
           {subtitle}
         </p>
       )}

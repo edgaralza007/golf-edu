@@ -20,9 +20,9 @@ export function TrendChart({
 }: TrendChartProps) {
   if (data.length === 0) {
     return (
-      <div className="bg-white rounded-xl border border-gray-100 p-4 shadow-sm">
-        <h3 className="text-sm font-semibold text-gray-700 mb-3">{title}</h3>
-        <div className="flex items-center justify-center h-40 text-gray-400 text-sm">
+      <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 p-4 shadow-sm">
+        <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">{title}</h3>
+        <div className="flex items-center justify-center h-40 text-gray-400 dark:text-gray-500 text-sm">
           No data yet
         </div>
       </div>
@@ -55,8 +55,8 @@ export function TrendChart({
   );
 
   return (
-    <div className="bg-white rounded-xl border border-gray-100 p-4 shadow-sm">
-      <h3 className="text-sm font-semibold text-gray-700 mb-3">{title}</h3>
+    <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 p-4 shadow-sm">
+      <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">{title}</h3>
       <div className="w-full overflow-x-auto">
         <svg viewBox={`0 0 ${width} ${height}`} className="w-full" style={{ minWidth: 300 }}>
           {/* Y-axis grid lines and labels */}

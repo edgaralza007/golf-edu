@@ -15,12 +15,12 @@ interface DrillCardProps {
 }
 
 const categoryColors: Record<string, string> = {
-  putting: 'bg-emerald-100 text-emerald-800',
-  'distance-control': 'bg-blue-100 text-blue-800',
-  'grip-setup': 'bg-purple-100 text-purple-800',
-  chipping: 'bg-amber-100 text-amber-800',
-  'full-swing': 'bg-red-100 text-red-800',
-  alignment: 'bg-cyan-100 text-cyan-800',
+  putting: 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300',
+  'distance-control': 'bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300',
+  'grip-setup': 'bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300',
+  chipping: 'bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300',
+  'full-swing': 'bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300',
+  alignment: 'bg-cyan-100 dark:bg-cyan-900/30 text-cyan-800 dark:text-cyan-300',
 };
 
 export function DrillCard({ drill, isFavorite, onToggleFavorite }: DrillCardProps) {
@@ -31,12 +31,12 @@ export function DrillCard({ drill, isFavorite, onToggleFavorite }: DrillCardProp
           e.preventDefault();
           onToggleFavorite(drill.id);
         }}
-        className="absolute top-3 right-3 z-10 p-1.5 rounded-full hover:bg-gray-100 transition-colors"
+        className="absolute top-3 right-3 z-10 p-1.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
         aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
       >
         <svg
           className={`w-5 h-5 transition-colors ${
-            isFavorite ? 'text-red-500 fill-red-500' : 'text-gray-300 hover:text-gray-400'
+            isFavorite ? 'text-red-500 fill-red-500' : 'text-gray-300 dark:text-gray-600 hover:text-gray-400 dark:hover:text-gray-500'
           }`}
           fill={isFavorite ? 'currentColor' : 'none'}
           stroke="currentColor"
@@ -55,7 +55,7 @@ export function DrillCard({ drill, isFavorite, onToggleFavorite }: DrillCardProp
         <div className="flex items-center gap-2 mb-2">
           <span
             className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${
-              categoryColors[drill.category] ?? 'bg-gray-100 text-gray-700'
+              categoryColors[drill.category] ?? 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
             }`}
           >
             {CATEGORY_LABELS[drill.category]}
@@ -63,13 +63,13 @@ export function DrillCard({ drill, isFavorite, onToggleFavorite }: DrillCardProp
           <DifficultyBadge level={drill.difficulty} />
         </div>
 
-        <h3 className="text-base font-semibold text-gray-900 mb-1 pr-8 group-hover:text-green-700 transition-colors">
+        <h3 className="text-base font-semibold text-gray-900 dark:text-gray-100 mb-1 pr-8 group-hover:text-green-700 dark:group-hover:text-green-400 transition-colors">
           {drill.name}
         </h3>
 
-        <p className="text-sm text-gray-500 mb-3 line-clamp-2">{drill.description}</p>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">{drill.description}</p>
 
-        <div className="flex items-center gap-3 text-xs text-gray-500">
+        <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
           <span className="flex items-center gap-1">
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path

@@ -24,8 +24,8 @@ export function AlphabetIndex({ availableLetters, activeLetter, onSelect }: Alph
               active
                 ? 'bg-green-700 text-white'
                 : available
-                  ? 'text-gray-700 hover:bg-green-50 hover:text-green-700'
-                  : 'text-gray-300 cursor-default'
+                  ? 'text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-green-900/30 hover:text-green-700 dark:hover:text-green-400'
+                  : 'text-gray-300 dark:text-gray-600 cursor-default'
             }`}
           >
             {letter}

@@ -57,20 +57,20 @@ export function Home() {
 
       {/* Features grid */}
       <section>
-        <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Explore Topics</h2>
+        <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">Explore Topics</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {features.map((f) => (
             <Link key={f.to} to={f.to} className="group">
               <Card className="h-full transition-shadow group-hover:shadow-md">
                 <div className="flex items-start gap-3">
-                  <div className="shrink-0 w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center text-green-700">
+                  <div className="shrink-0 w-10 h-10 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-700 dark:text-green-400">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={f.icon} />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 group-hover:text-green-700 transition-colors">{f.title}</h3>
-                    <p className="text-sm text-gray-500 mt-1">{f.desc}</p>
+                    <h3 className="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-green-700 dark:group-hover:text-green-400 transition-colors">{f.title}</h3>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{f.desc}</p>
                   </div>
                 </div>
               </Card>
@@ -82,27 +82,27 @@ export function Home() {
       {/* Quick stats if onboarded */}
       {user.onboardingComplete && user.moduleProgress.length > 0 && (
         <section>
-          <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Your Progress</h2>
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">Your Progress</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <Card padding="sm" className="text-center">
               <div className="text-2xl font-bold text-green-700">{user.moduleProgress.length}</div>
-              <div className="text-xs text-gray-500 mt-1">Modules Started</div>
+              <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">Modules Started</div>
             </Card>
             <Card padding="sm" className="text-center">
               <div className="text-2xl font-bold text-green-700">
                 {user.moduleProgress.reduce((s, m) => s + m.lessonsCompleted.length, 0)}
               </div>
-              <div className="text-xs text-gray-500 mt-1">Lessons Done</div>
+              <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">Lessons Done</div>
             </Card>
             <Card padding="sm" className="text-center">
               <div className="text-2xl font-bold text-green-700">{user.scores.length}</div>
-              <div className="text-xs text-gray-500 mt-1">Rounds Logged</div>
+              <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">Rounds Logged</div>
             </Card>
             <Card padding="sm" className="text-center">
               <div className="text-2xl font-bold text-green-700">
                 {user.drillProgress.reduce((s, d) => s + d.completedCount, 0)}
               </div>
-              <div className="text-xs text-gray-500 mt-1">Drills Practiced</div>
+              <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">Drills Practiced</div>
             </Card>
           </div>
         </section>

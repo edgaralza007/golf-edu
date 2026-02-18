@@ -14,7 +14,7 @@ export function RoundHistory({ rounds, onView, onDelete }: RoundHistoryProps) {
 
   if (sorted.length === 0) {
     return (
-      <div className="text-center py-8 text-gray-400">
+      <div className="text-center py-8 text-gray-400 dark:text-gray-500">
         <p className="text-sm">No rounds logged yet</p>
         <p className="text-xs mt-1">Start a new round to track your progress</p>
       </div>
@@ -29,19 +29,19 @@ export function RoundHistory({ rounds, onView, onDelete }: RoundHistoryProps) {
         return (
           <div
             key={round.id}
-            className="flex items-center gap-3 bg-white rounded-xl border border-gray-100 shadow-sm p-3"
+            className="flex items-center gap-3 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm p-3"
           >
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-semibold text-gray-800 truncate">
+              <p className="text-sm font-semibold text-gray-800 dark:text-gray-200 truncate">
                 {round.courseName}
               </p>
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-gray-400 dark:text-gray-500">
                 {new Date(round.date).toLocaleDateString()} &middot; {round.holes} holes
               </p>
             </div>
             <div className="text-right shrink-0">
-              <p className="text-lg font-bold text-gray-800">{round.totalScore}</p>
-              <p className={`text-xs font-medium ${diff > 0 ? 'text-red-500' : diff < 0 ? 'text-green-600' : 'text-gray-500'}`}>
+              <p className="text-lg font-bold text-gray-800 dark:text-gray-200">{round.totalScore}</p>
+              <p className={`text-xs font-medium ${diff > 0 ? 'text-red-500 dark:text-red-400' : diff < 0 ? 'text-green-600 dark:text-green-400' : 'text-gray-500 dark:text-gray-400'}`}>
                 {diffStr}
               </p>
             </div>
@@ -52,7 +52,7 @@ export function RoundHistory({ rounds, onView, onDelete }: RoundHistoryProps) {
               <Button
                 size="sm"
                 variant="ghost"
-                className="text-red-500 hover:bg-red-50"
+                className="text-red-500 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/30"
                 onClick={() => onDelete(round.id)}
               >
                 Delete

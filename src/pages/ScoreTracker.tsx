@@ -125,8 +125,8 @@ export function ScoreTracker() {
   return (
     <div className="max-w-2xl mx-auto space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">Score Tracker</h1>
-        <p className="text-sm text-gray-500 mt-1">Log rounds and practice sessions</p>
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Score Tracker</h1>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Log rounds and practice sessions</p>
       </div>
 
       {state === 'idle' && (
@@ -143,7 +143,7 @@ export function ScoreTracker() {
                 + New Round
               </Button>
               <Card>
-                <h2 className="text-sm font-semibold text-gray-700 mb-3">Past Rounds</h2>
+                <h2 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Past Rounds</h2>
                 <RoundHistory
                   rounds={user.rounds}
                   onView={(round) => setViewingRound(round)}
@@ -159,9 +159,9 @@ export function ScoreTracker() {
                 + Log Range Session
               </Button>
               <Card>
-                <h2 className="text-sm font-semibold text-gray-700 mb-3">Past Range Sessions</h2>
+                <h2 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Past Range Sessions</h2>
                 {user.rangeSessions.length === 0 ? (
-                  <p className="text-sm text-gray-400 text-center py-6">
+                  <p className="text-sm text-gray-400 dark:text-gray-500 text-center py-6">
                     No range sessions yet
                   </p>
                 ) : (
@@ -171,13 +171,13 @@ export function ScoreTracker() {
                       .map((session) => (
                         <div
                           key={session.id}
-                          className="flex items-center gap-3 p-3 rounded-lg border border-gray-100"
+                          className="flex items-center gap-3 p-3 rounded-lg border border-gray-100 dark:border-gray-700"
                         >
                           <div className="flex-1 min-w-0">
-                            <p className="text-sm font-medium text-gray-800">
+                            <p className="text-sm font-medium text-gray-800 dark:text-gray-200">
                               {session.focusArea} - {session.ballsHit} balls
                             </p>
-                            <p className="text-xs text-gray-400">
+                            <p className="text-xs text-gray-400 dark:text-gray-500">
                               {new Date(session.date).toLocaleDateString()}
                               {session.notes && ` - ${session.notes}`}
                             </p>
@@ -194,7 +194,7 @@ export function ScoreTracker() {
 
       {state === 'new-round-form' && (
         <Card>
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Start New Round</h2>
+          <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Start New Round</h2>
           <NewRoundForm
             onStart={handleStartRound}
             onCancel={() => setState('idle')}
@@ -206,10 +206,10 @@ export function ScoreTracker() {
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-lg font-semibold text-gray-800">
+              <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
                 {activeRound.courseName}
               </h2>
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-gray-400 dark:text-gray-500">
                 {activeRound.holes} holes &middot; Par {activeRound.coursePar}
               </p>
             </div>
@@ -232,7 +232,7 @@ export function ScoreTracker() {
 
       {state === 'range-form' && (
         <Card>
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Log Range Session</h2>
+          <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Log Range Session</h2>
           <RangeSessionForm
             onSave={handleSaveRangeSession}
             onCancel={() => setState('idle')}
@@ -248,28 +248,28 @@ export function ScoreTracker() {
       >
         {viewingRound && (
           <div className="space-y-3">
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
               {new Date(viewingRound.date).toLocaleDateString()} &middot;{' '}
               {viewingRound.holes} holes &middot; Par {viewingRound.coursePar}
             </p>
             <div className="grid grid-cols-4 gap-2 text-center">
-              <div className="bg-gray-50 rounded-lg p-2">
-                <p className="text-xs text-gray-500">Score</p>
+              <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-2">
+                <p className="text-xs text-gray-500 dark:text-gray-400">Score</p>
                 <p className="text-lg font-bold">{viewingRound.totalScore}</p>
               </div>
-              <div className="bg-gray-50 rounded-lg p-2">
-                <p className="text-xs text-gray-500">vs Par</p>
+              <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-2">
+                <p className="text-xs text-gray-500 dark:text-gray-400">vs Par</p>
                 <p className="text-lg font-bold">
                   {viewingRound.totalScore - viewingRound.coursePar > 0 ? '+' : ''}
                   {viewingRound.totalScore - viewingRound.coursePar}
                 </p>
               </div>
-              <div className="bg-gray-50 rounded-lg p-2">
-                <p className="text-xs text-gray-500">Putts</p>
+              <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-2">
+                <p className="text-xs text-gray-500 dark:text-gray-400">Putts</p>
                 <p className="text-lg font-bold">{viewingRound.totalPutts}</p>
               </div>
-              <div className="bg-gray-50 rounded-lg p-2">
-                <p className="text-xs text-gray-500">FW</p>
+              <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-2">
+                <p className="text-xs text-gray-500 dark:text-gray-400">FW</p>
                 <p className="text-lg font-bold">
                   {viewingRound.fairwaysPossible > 0
                     ? Math.round((viewingRound.fairwaysHit / viewingRound.fairwaysPossible) * 100) + '%'
@@ -279,7 +279,7 @@ export function ScoreTracker() {
             </div>
 
             <div className="mt-3">
-              <div className="grid grid-cols-5 gap-1 text-xs font-semibold text-gray-500 uppercase px-1">
+              <div className="grid grid-cols-5 gap-1 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase px-1">
                 <div className="text-center">Hole</div>
                 <div className="text-center">Par</div>
                 <div className="text-center">Score</div>
@@ -293,16 +293,16 @@ export function ScoreTracker() {
                     <div
                       key={s.hole}
                       className={`grid grid-cols-5 gap-1 text-sm text-center py-1 rounded ${
-                        diff < 0 ? 'bg-green-50' : diff > 1 ? 'bg-red-50' : ''
+                        diff < 0 ? 'bg-green-50 dark:bg-green-900/30' : diff > 1 ? 'bg-red-50 dark:bg-red-900/30' : ''
                       }`}
                     >
-                      <div className="font-medium text-gray-600">{s.hole}</div>
-                      <div className="text-gray-500">{s.par}</div>
-                      <div className={`font-semibold ${diff < 0 ? 'text-green-700' : diff > 0 ? 'text-red-600' : 'text-gray-800'}`}>
+                      <div className="font-medium text-gray-600 dark:text-gray-400">{s.hole}</div>
+                      <div className="text-gray-500 dark:text-gray-400">{s.par}</div>
+                      <div className={`font-semibold ${diff < 0 ? 'text-green-700 dark:text-green-400' : diff > 0 ? 'text-red-600 dark:text-red-400' : 'text-gray-800 dark:text-gray-200'}`}>
                         {s.score || '-'}
                       </div>
-                      <div className="text-gray-600">{s.putts || '-'}</div>
-                      <div className="text-gray-600">
+                      <div className="text-gray-600 dark:text-gray-400">{s.putts || '-'}</div>
+                      <div className="text-gray-600 dark:text-gray-400">
                         {s.fairwayHit === null ? '-' : s.fairwayHit ? 'Y' : 'N'}
                       </div>
                     </div>
@@ -328,11 +328,11 @@ export function ScoreTracker() {
             </span>
           </div>
           {newBadgeNames.map((name) => (
-            <p key={name} className="text-lg font-bold text-green-800">
+            <p key={name} className="text-lg font-bold text-green-800 dark:text-green-300">
               {name}
             </p>
           ))}
-          <p className="text-sm text-gray-500">Congratulations on your achievement!</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">Congratulations on your achievement!</p>
           <Button onClick={() => setShowCelebration(false)}>Continue</Button>
         </div>
         <style>{`

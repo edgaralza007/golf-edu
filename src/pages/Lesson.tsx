@@ -31,10 +31,10 @@ export function Lesson() {
   if (!mod || !lesson) {
     return (
       <div className="max-w-2xl mx-auto text-center py-16">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
           Lesson Not Found
         </h1>
-        <p className="text-gray-600 mb-6">This lesson does not exist.</p>
+        <p className="text-gray-600 dark:text-gray-400 mb-6">This lesson does not exist.</p>
         <Link to="/learning-path">
           <Button>Back to Learning Path</Button>
         </Link>
@@ -68,30 +68,30 @@ export function Lesson() {
       <nav className="mb-6 text-sm">
         <Link
           to="/learning-path"
-          className="text-green-700 hover:text-green-800"
+          className="text-green-700 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300"
         >
           Learning Path
         </Link>
-        <span className="mx-2 text-gray-400">/</span>
+        <span className="mx-2 text-gray-400 dark:text-gray-500">/</span>
         <Link
           to={`/learning-path/${mod.id}`}
-          className="text-green-700 hover:text-green-800"
+          className="text-green-700 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300"
         >
           {mod.title}
         </Link>
-        <span className="mx-2 text-gray-400">/</span>
-        <span className="text-gray-600">{lesson.title}</span>
+        <span className="mx-2 text-gray-400 dark:text-gray-500">/</span>
+        <span className="text-gray-600 dark:text-gray-400">{lesson.title}</span>
       </nav>
 
       {/* Lesson Header */}
       <div className="mb-8">
-        <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100">
           {lesson.title}
         </h1>
-        <div className="flex items-center gap-3 mt-2 text-sm text-gray-500">
+        <div className="flex items-center gap-3 mt-2 text-sm text-gray-500 dark:text-gray-400">
           <span>{lesson.estimatedMinutes} min read</span>
           {isCompleted && (
-            <span className="inline-flex items-center gap-1 text-green-700 font-medium">
+            <span className="inline-flex items-center gap-1 text-green-700 dark:text-green-400 font-medium">
               <svg
                 className="w-4 h-4"
                 fill="none"
@@ -114,7 +114,7 @@ export function Lesson() {
       {/* Content Paragraphs */}
       <div className="space-y-4 mb-8">
         {lesson.content.map((paragraph, idx) => (
-          <p key={idx} className="text-gray-700 leading-relaxed">
+          <p key={idx} className="text-gray-700 dark:text-gray-300 leading-relaxed">
             {paragraph}
           </p>
         ))}
@@ -122,8 +122,8 @@ export function Lesson() {
 
       {/* Tips Callout */}
       {lesson.tips.length > 0 && (
-        <div className="mb-8 rounded-lg border-2 border-green-200 bg-green-50 p-5">
-          <h2 className="text-lg font-semibold text-green-800 mb-3 flex items-center gap-2">
+        <div className="mb-8 rounded-lg border-2 border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-900/30 p-5">
+          <h2 className="text-lg font-semibold text-green-800 dark:text-green-300 mb-3 flex items-center gap-2">
             <svg
               className="w-5 h-5"
               fill="none"
@@ -141,7 +141,7 @@ export function Lesson() {
           </h2>
           <ul className="space-y-2">
             {lesson.tips.map((tip, idx) => (
-              <li key={idx} className="flex gap-2 text-green-900 text-sm">
+              <li key={idx} className="flex gap-2 text-green-900 dark:text-green-200 text-sm">
                 <span className="text-green-600 shrink-0 mt-0.5">
                   <svg
                     className="w-4 h-4"
@@ -164,15 +164,15 @@ export function Lesson() {
 
       {/* Key Takeaways */}
       {lesson.keyTakeaways.length > 0 && (
-        <Card className="mb-8 bg-gray-50 border-gray-200">
-          <h2 className="text-lg font-semibold text-gray-900 mb-3">
+        <Card className="mb-8 bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3">
             Key Takeaways
           </h2>
           <ul className="space-y-2">
             {lesson.keyTakeaways.map((takeaway, idx) => (
               <li
                 key={idx}
-                className="flex gap-2 text-gray-700 text-sm"
+                className="flex gap-2 text-gray-700 dark:text-gray-300 text-sm"
               >
                 <span className="text-green-600 shrink-0 mt-0.5 font-bold">
                   {idx + 1}.
@@ -198,11 +198,11 @@ export function Lesson() {
       </div>
 
       {/* Prev / Next Navigation */}
-      <div className="flex items-center justify-between border-t border-gray-200 pt-6">
+      <div className="flex items-center justify-between border-t border-gray-200 dark:border-gray-700 pt-6">
         {prev ? (
           <Link
             to={`/learning-path/${prev.moduleId}/${prev.lessonId}`}
-            className="flex items-center gap-2 text-sm text-green-700 hover:text-green-800 transition-colors"
+            className="flex items-center gap-2 text-sm text-green-700 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 transition-colors"
           >
             <svg
               className="w-4 h-4"
@@ -225,7 +225,7 @@ export function Lesson() {
         {next ? (
           <Link
             to={`/learning-path/${next.moduleId}/${next.lessonId}`}
-            className="flex items-center gap-2 text-sm text-green-700 hover:text-green-800 transition-colors"
+            className="flex items-center gap-2 text-sm text-green-700 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 transition-colors"
           >
             Next Lesson
             <svg

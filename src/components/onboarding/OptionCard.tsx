@@ -13,16 +13,16 @@ export function OptionCard({ label, description, icon, selected, onClick }: Opti
       onClick={onClick}
       className={`w-full flex items-center gap-4 p-4 rounded-xl border-2 text-left transition-all duration-200 cursor-pointer ${
         selected
-          ? 'border-green-600 bg-green-50 shadow-md ring-2 ring-green-200'
-          : 'border-gray-200 bg-white hover:border-green-300 hover:bg-green-50/50'
+          ? 'border-green-600 bg-green-50 dark:bg-green-900/30 shadow-md ring-2 ring-green-200 dark:ring-green-800'
+          : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-green-300 dark:hover:border-green-700 hover:bg-green-50/50 dark:hover:bg-green-900/30'
       }`}
     >
       <span className="text-3xl flex-shrink-0" role="img">{icon}</span>
       <div className="min-w-0">
-        <div className={`font-semibold text-lg ${selected ? 'text-green-800' : 'text-gray-900'}`}>
+        <div className={`font-semibold text-lg ${selected ? 'text-green-800 dark:text-green-300' : 'text-gray-900 dark:text-gray-100'}`}>
           {label}
         </div>
-        <div className={`text-sm ${selected ? 'text-green-600' : 'text-gray-500'}`}>
+        <div className={`text-sm ${selected ? 'text-green-600 dark:text-green-400' : 'text-gray-500 dark:text-gray-400'}`}>
           {description}
         </div>
       </div>

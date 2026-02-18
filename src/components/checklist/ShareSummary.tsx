@@ -59,8 +59,8 @@ export function ShareSummary({ sections, checkedIds }: ShareSummaryProps) {
 
   return (
     <div className="space-y-3">
-      <div className="rounded-lg bg-gray-50 border border-gray-200 p-4">
-        <pre className="text-sm text-gray-700 whitespace-pre-wrap font-sans leading-relaxed">
+      <div className="rounded-lg bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-4">
+        <pre className="text-sm text-gray-700 dark:text-gray-300 whitespace-pre-wrap font-sans leading-relaxed">
           {summaryText}
         </pre>
       </div>
@@ -78,7 +78,7 @@ export function ShareSummary({ sections, checkedIds }: ShareSummaryProps) {
         <button
           type="button"
           onClick={copyToClipboard}
-          className="inline-flex items-center gap-2 rounded-lg border-2 border-green-700 px-4 py-2 text-sm font-medium text-green-700 hover:bg-green-50 transition-colors"
+          className="inline-flex items-center gap-2 rounded-lg border-2 border-green-700 px-4 py-2 text-sm font-medium text-green-700 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/30 transition-colors"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />

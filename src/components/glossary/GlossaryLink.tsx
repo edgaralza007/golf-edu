@@ -24,7 +24,7 @@ export function GlossaryLink({ termId, children, className = '' }: GlossaryLinkP
   return (
     <a
       href={`/glossary#${termId}`}
-      className={`text-green-700 hover:text-green-900 underline decoration-dotted underline-offset-2 font-medium ${className}`}
+      className={`text-green-700 dark:text-green-400 hover:text-green-900 dark:hover:text-green-300 underline decoration-dotted underline-offset-2 font-medium ${className}`}
       title={term?.definition}
     >
       {label}

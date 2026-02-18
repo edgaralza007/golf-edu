@@ -21,8 +21,8 @@ const navItems = [
 const linkClass = ({ isActive }: { isActive: boolean }) =>
   `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
     isActive
-      ? 'bg-green-100 text-green-800'
-      : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+      ? 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-400'
+      : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-200'
   }`;
 
 export function Sidebar({ open, onClose }: SidebarProps) {
@@ -34,16 +34,16 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       )}
 
       <aside
-        className={`fixed top-0 left-0 z-50 h-full w-64 bg-white border-r border-gray-200 transform transition-transform duration-200 ease-in-out md:translate-x-0 md:static md:z-auto ${
+        className={`fixed top-0 left-0 z-50 h-full w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 transform transition-transform duration-200 ease-in-out md:translate-x-0 md:static md:z-auto ${
           open ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
-        <div className="flex items-center gap-2 px-4 h-16 border-b border-gray-200">
+        <div className="flex items-center gap-2 px-4 h-16 border-b border-gray-200 dark:border-gray-700">
           <div className="w-8 h-8 rounded-full bg-green-700 flex items-center justify-center">
             <span className="text-white font-bold text-sm">G</span>
           </div>
-          <span className="text-lg font-bold text-green-800">GolfEdu</span>
-          <button className="ml-auto md:hidden text-gray-400 hover:text-gray-600" onClick={onClose}>
+          <span className="text-lg font-bold text-green-800 dark:text-green-400">GolfEdu</span>
+          <button className="ml-auto md:hidden text-gray-400 hover:text-gray-600 dark:hover:text-gray-300" onClick={onClose}>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>

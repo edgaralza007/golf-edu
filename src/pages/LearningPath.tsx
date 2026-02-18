@@ -31,15 +31,15 @@ export function LearningPath() {
       {/* Header */}
       <div className="mb-8">
         {onboardingComplete && preferences.experienceLevel ? (
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-1">
             Your Learning Path
           </h1>
         ) : (
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-1">
             Learning Path
           </h1>
         )}
-        <p className="text-gray-600">
+        <p className="text-gray-600 dark:text-gray-400">
           Master golf fundamentals one step at a time. Complete each module to
           unlock the next.
         </p>
@@ -48,10 +48,10 @@ export function LearningPath() {
       {/* Overall Progress */}
       <Card className="mb-8">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-sm font-medium text-gray-700">
+          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
             Overall Progress
           </span>
-          <span className="text-sm text-gray-500">
+          <span className="text-sm text-gray-500 dark:text-gray-400">
             {completedLessons} / {totalLessons} lessons
           </span>
         </div>
@@ -79,8 +79,8 @@ export function LearningPath() {
                     isComplete
                       ? 'bg-green-600 border-green-600 text-white'
                       : unlocked
-                        ? 'bg-white border-green-600 text-green-700'
-                        : 'bg-gray-100 border-gray-300 text-gray-400'
+                        ? 'bg-white dark:bg-gray-800 border-green-600 text-green-700 dark:text-green-400'
+                        : 'bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-400 dark:text-gray-500'
                   }`}
                 >
                   {isComplete ? (
@@ -105,7 +105,7 @@ export function LearningPath() {
                 {!isLast && (
                   <div
                     className={`w-0.5 flex-1 min-h-[2rem] ${
-                      isComplete ? 'bg-green-600' : 'bg-gray-200'
+                      isComplete ? 'bg-green-600' : 'bg-gray-200 dark:bg-gray-600'
                     }`}
                   />
                 )}
@@ -123,7 +123,7 @@ export function LearningPath() {
                         <span className="text-2xl leading-none">{mod.icon}</span>
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 flex-wrap">
-                            <h3 className="font-semibold text-gray-900 group-hover:text-green-700 transition-colors">
+                            <h3 className="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-green-700 dark:hover:text-green-400 transition-colors">
                               {mod.title}
                             </h3>
                             {isComplete && (
@@ -133,10 +133,10 @@ export function LearningPath() {
                               <Badge variant="amber">In Progress</Badge>
                             )}
                           </div>
-                          <p className="text-sm text-gray-600 mt-1">
+                          <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
                             {mod.description}
                           </p>
-                          <div className="flex items-center gap-4 mt-2 text-xs text-gray-500">
+                          <div className="flex items-center gap-4 mt-2 text-xs text-gray-500 dark:text-gray-400">
                             <span>{totalModuleLessons} lessons</span>
                             <span>{estMinutes} min</span>
                           </div>
@@ -160,19 +160,19 @@ export function LearningPath() {
                       </span>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 flex-wrap">
-                          <h3 className="font-semibold text-gray-400">
+                          <h3 className="font-semibold text-gray-400 dark:text-gray-500">
                             {mod.title}
                           </h3>
                           <Badge variant="gray">Locked</Badge>
                         </div>
-                        <p className="text-sm text-gray-400 mt-1">
+                        <p className="text-sm text-gray-400 dark:text-gray-500 mt-1">
                           {mod.description}
                         </p>
-                        <div className="flex items-center gap-4 mt-2 text-xs text-gray-400">
+                        <div className="flex items-center gap-4 mt-2 text-xs text-gray-400 dark:text-gray-500">
                           <span>{totalModuleLessons} lessons</span>
                           <span>{estMinutes} min</span>
                         </div>
-                        <p className="text-xs text-gray-400 mt-2 italic">
+                        <p className="text-xs text-gray-400 dark:text-gray-500 mt-2 italic">
                           Complete &ldquo;{modules[index - 1].title}&rdquo; to
                           unlock
                         </p>

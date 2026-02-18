@@ -66,11 +66,11 @@ export function ScenarioQuiz() {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between text-sm text-gray-600">
+      <div className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400">
         <span>
           Question {currentIndex + 1} of {total}
         </span>
-        <span className="font-medium text-green-700">
+        <span className="font-medium text-green-700 dark:text-green-400">
           Score: {score}
         </span>
       </div>

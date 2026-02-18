@@ -88,21 +88,21 @@ export function Glossary() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200">
+      <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-5xl mx-auto px-4 py-6 md:py-8">
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-1">
             Golf Glossary
           </h1>
-          <p className="text-gray-500 text-sm md:text-base">
+          <p className="text-gray-500 dark:text-gray-400 text-sm md:text-base">
             {glossaryTerms.length} essential golf terms every beginner should know
           </p>
         </div>
       </div>
 
       {/* Search & Filters - sticky */}
-      <div className="sticky top-0 z-20 bg-gray-50 border-b border-gray-200 shadow-sm">
+      <div className="sticky top-0 z-20 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-sm">
         <div className="max-w-5xl mx-auto px-4 py-3 space-y-3">
           <GlossarySearch value={search} onChange={setSearch} />
           <CategoryFilter selected={category} onChange={setCategory} />
@@ -121,7 +121,7 @@ export function Glossary() {
           </aside>
 
           {/* Alphabet bar - mobile only */}
-          <div className="fixed bottom-0 left-0 right-0 z-20 bg-white border-t border-gray-200 px-2 py-1.5 md:hidden">
+          <div className="fixed bottom-0 left-0 right-0 z-20 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 px-2 py-1.5 md:hidden">
             <div className="flex justify-between overflow-x-auto">
               {'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map((letter) => {
                 const available = availableLetters.has(letter);
@@ -132,8 +132,8 @@ export function Glossary() {
                     onClick={() => handleLetterClick(letter)}
                     className={`w-7 h-7 flex items-center justify-center rounded text-xs font-semibold ${
                       available
-                        ? 'text-gray-700 active:bg-green-100'
-                        : 'text-gray-300'
+                        ? 'text-gray-700 dark:text-gray-300 active:bg-green-100 dark:active:bg-green-900/30'
+                        : 'text-gray-300 dark:text-gray-600'
                     }`}
                   >
                     {letter}
@@ -147,8 +147,8 @@ export function Glossary() {
           <div className="flex-1 space-y-8 pb-16 md:pb-6">
             {filtered.length === 0 && (
               <div className="text-center py-12">
-                <p className="text-gray-500 text-lg">No terms found</p>
-                <p className="text-gray-400 text-sm mt-1">
+                <p className="text-gray-500 dark:text-gray-400 text-lg">No terms found</p>
+                <p className="text-gray-400 dark:text-gray-500 text-sm mt-1">
                   Try adjusting your search or category filter
                 </p>
               </div>
@@ -156,7 +156,7 @@ export function Glossary() {
 
             {[...grouped.entries()].map(([letter, terms]) => (
               <section key={letter} id={`letter-${letter}`}>
-                <h2 className="text-xl font-bold text-green-700 mb-3 scroll-mt-36">
+                <h2 className="text-xl font-bold text-green-700 dark:text-green-400 mb-3 scroll-mt-36">
                   {letter}
                 </h2>
                 <div className="space-y-3">

@@ -8,6 +8,14 @@
     <meta name="theme-color" content="#166534" />
     <link rel="manifest" href="/manifest.json" />
     <title>GolfEdu - Learn Golf the Smart Way</title>
+    <script>
+      (function() {
+        var t = localStorage.getItem('golf-edu-theme');
+        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

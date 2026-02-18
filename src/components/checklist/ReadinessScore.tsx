@@ -46,7 +46,7 @@ export function ReadinessScore({ percentage }: ReadinessScoreProps) {
           </span>
         </div>
       </div>
-      <p className="text-sm font-medium text-gray-600">
+      <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
         {percentage === 100
           ? 'You are ready!'
           : percentage >= 67

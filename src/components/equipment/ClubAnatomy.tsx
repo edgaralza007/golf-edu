@@ -9,8 +9,8 @@ export function ClubAnatomy() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-xl font-bold text-gray-900 mb-2">Anatomy of a Golf Club</h2>
-        <p className="text-sm text-gray-600">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">Anatomy of a Golf Club</h2>
+        <p className="text-sm text-gray-600 dark:text-gray-400">
           Understanding your club's parts helps you communicate with pros and pick the right equipment.
         </p>
       </div>
@@ -200,12 +200,12 @@ export function ClubAnatomy() {
         <div className="flex-1 min-w-0 w-full space-y-4">
           {active ? (
             <Card className="border-l-4 border-l-green-600">
-              <h3 className="font-bold text-gray-900 text-lg">{active.name}</h3>
-              <p className="text-sm text-gray-600 mt-1">{active.description}</p>
+              <h3 className="font-bold text-gray-900 dark:text-gray-100 text-lg">{active.name}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">{active.description}</p>
             </Card>
           ) : (
-            <Card className="bg-gray-50 text-center">
-              <p className="text-sm text-gray-500 py-2">
+            <Card className="bg-gray-50 dark:bg-gray-900 text-center">
+              <p className="text-sm text-gray-500 dark:text-gray-400 py-2">
                 Tap a part on the club diagram to learn about it.
               </p>
             </Card>
@@ -218,8 +218,8 @@ export function ClubAnatomy() {
                 onClick={() => setActivePart(activePart === part.id ? null : part.id)}
                 className={`text-left px-3 py-2 rounded-lg text-sm transition-colors ${
                   activePart === part.id
-                    ? 'bg-green-100 text-green-800 font-medium'
-                    : 'bg-gray-50 text-gray-700 hover:bg-gray-100'
+                    ? 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 font-medium'
+                    : 'bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
                 }`}
               >
                 {part.name}
@@ -231,14 +231,14 @@ export function ClubAnatomy() {
 
       {/* Loft comparison */}
       <Card>
-        <h3 className="font-bold text-gray-900 mb-3">How Loft Affects Ball Flight</h3>
-        <p className="text-sm text-gray-600 mb-4">
+        <h3 className="font-bold text-gray-900 dark:text-gray-100 mb-3">How Loft Affects Ball Flight</h3>
+        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
           Loft is the angle of the clubface. Less loft = lower, farther shots. More loft = higher, shorter shots.
         </p>
         <div className="flex flex-col sm:flex-row gap-6">
           {/* Low loft - Driver */}
           <div className="flex-1">
-            <p className="text-sm font-semibold text-gray-700 mb-2 text-center">Driver (~10&deg;)</p>
+            <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2 text-center">Driver (~10&deg;)</p>
             <svg viewBox="0 0 240 100" className="w-full max-w-[240px] mx-auto">
               {/* Ground */}
               <line x1="10" y1="85" x2="230" y2="85" stroke="#D1D5DB" strokeWidth="2" />
@@ -268,7 +268,7 @@ export function ClubAnatomy() {
 
           {/* High loft - Sand Wedge */}
           <div className="flex-1">
-            <p className="text-sm font-semibold text-gray-700 mb-2 text-center">Sand Wedge (~56&deg;)</p>
+            <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2 text-center">Sand Wedge (~56&deg;)</p>
             <svg viewBox="0 0 240 100" className="w-full max-w-[240px] mx-auto">
               {/* Ground */}
               <line x1="10" y1="85" x2="230" y2="85" stroke="#D1D5DB" strokeWidth="2" />

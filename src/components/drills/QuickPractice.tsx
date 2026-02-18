@@ -54,17 +54,17 @@ export function QuickPractice({ open, onClose }: QuickPracticeProps) {
   return (
     <>
       <div className="fixed inset-0 z-40 bg-black/40" onClick={onClose} />
-      <div className="fixed inset-x-4 top-[10%] md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-lg z-50 bg-white rounded-2xl shadow-xl max-h-[80vh] flex flex-col">
-        <div className="flex items-center justify-between p-4 md:p-6 border-b border-gray-100">
+      <div className="fixed inset-x-4 top-[10%] md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-lg z-50 bg-white dark:bg-gray-800 rounded-2xl shadow-xl max-h-[80vh] flex flex-col">
+        <div className="flex items-center justify-between p-4 md:p-6 border-b border-gray-100 dark:border-gray-700">
           <div>
-            <h2 className="text-lg font-bold text-gray-900">Quick Practice Plan</h2>
-            <p className="text-sm text-gray-500 mt-0.5">
+            <h2 className="text-lg font-bold text-gray-900 dark:text-gray-100">Quick Practice Plan</h2>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
               Select your available time and we'll build a practice plan.
             </p>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-100"
+            className="p-1.5 rounded-lg text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -85,7 +85,7 @@ export function QuickPractice({ open, onClose }: QuickPracticeProps) {
                 className={`flex-1 py-2.5 rounded-lg text-sm font-medium border transition-colors ${
                   selectedTime === m
                     ? 'bg-green-700 text-white border-green-700'
-                    : 'bg-white text-gray-600 border-gray-200 hover:border-gray-300'
+                    : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
                 }`}
               >
                 {m} min
@@ -104,10 +104,10 @@ export function QuickPractice({ open, onClose }: QuickPracticeProps) {
           {plan && (
             <div className="space-y-3">
               <div className="flex items-center justify-between text-sm">
-                <span className="font-medium text-gray-700">
+                <span className="font-medium text-gray-700 dark:text-gray-300">
                   Your {selectedTime}-Minute Plan
                 </span>
-                <span className="text-gray-500">
+                <span className="text-gray-500 dark:text-gray-400">
                   {totalMinutes} min total &middot; {plan.length} drills
                 </span>
               </div>
@@ -118,19 +118,19 @@ export function QuickPractice({ open, onClose }: QuickPracticeProps) {
                     <Link
                       to={`/drills/${drill.id}`}
                       onClick={onClose}
-                      className="flex items-start gap-3 p-3 rounded-lg border border-gray-100 hover:border-green-200 hover:bg-green-50/50 transition-colors"
+                      className="flex items-start gap-3 p-3 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-green-200 dark:hover:border-green-700 hover:bg-green-50/50 dark:hover:bg-green-900/30 transition-colors"
                     >
-                      <span className="flex items-center justify-center w-6 h-6 rounded-full bg-green-100 text-green-800 text-xs font-bold shrink-0 mt-0.5">
+                      <span className="flex items-center justify-center w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 text-xs font-bold shrink-0 mt-0.5">
                         {i + 1}
                       </span>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2">
-                          <span className="text-sm font-medium text-gray-900 truncate">
+                          <span className="text-sm font-medium text-gray-900 dark:text-gray-100 truncate">
                             {drill.name}
                           </span>
                           <DifficultyBadge level={drill.difficulty} />
                         </div>
-                        <div className="flex items-center gap-2 mt-1 text-xs text-gray-500">
+                        <div className="flex items-center gap-2 mt-1 text-xs text-gray-500 dark:text-gray-400">
                           <span>{drill.estimatedMinutes} min</span>
                           <span>&middot;</span>
                           <span>
