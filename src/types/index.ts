@@ -102,3 +102,52 @@ export interface UserContextValue {
   deleteRangeSession: (sessionId: string) => void;
   resetProgress: () => void;
 }
+
+// ── Shot Coach ──────────────────────────────────────────────────────────────
+
+export type MissTendency = 'straight' | 'fade' | 'draw';
+export type PlayStyle = 'conservative' | 'aggressive';
+export type WindDirection = 'none' | 'N' | 'NE' | 'E' | 'SE' | 'S' | 'SW' | 'W' | 'NW';
+
+export interface ClubDistances {
+  driver: number;
+  wood3: number;
+  iron5: number;
+  iron7: number;
+  iron9: number;
+  pw: number;
+}
+
+export interface ShotCoachProfile {
+  clubDistances: ClubDistances;
+  missTendency: MissTendency;
+  playStyle: PlayStyle;
+}
+
+export type ShotOutcome = 'thumbsUp' | 'thumbsDown' | null;
+
+export interface ShotSession {
+  id: string;
+  date: string;
+  /** Small base64-encoded JPEG thumbnail (no data-URL prefix) */
+  imageThumbnail: string;
+  clubRecommended: string;
+  distance: number;
+  outcome: ShotOutcome;
+}
+
+export interface CaddieAdvice {
+  recommendedClub: string;
+  aimAdvice: string;
+  risks: string;
+  confidenceBooster: string;
+  rawText: string;
+}
+
+export interface ShotCoachRequest {
+  imageBase64: string;
+  profile: ShotCoachProfile;
+  distance: number;
+  windSpeed: number;
+  windDirection: WindDirection;
+}

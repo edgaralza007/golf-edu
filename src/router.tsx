@@ -15,6 +15,7 @@ import { DrillDetail } from './pages/DrillDetail';
 import { ScoreTracker } from './pages/ScoreTracker';
 import { Dashboard } from './pages/Dashboard';
 import { CoursePrep } from './pages/CoursePrep';
+import { ShotCoach } from './pages/ShotCoach';
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +36,7 @@ export const router = createBrowserRouter([
       { path: '/score-tracker', element: <ScoreTracker /> },
       { path: '/dashboard', element: <Dashboard /> },
       { path: '/course-prep', element: <CoursePrep /> },
+      { path: '/shot-coach', element: <ShotCoach /> },
     ],
   },
 ]);
